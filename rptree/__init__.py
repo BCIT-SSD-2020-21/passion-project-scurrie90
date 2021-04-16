@@ -2,4 +2,4 @@
 
 """Top-level Package for Recursive Python Tree"""
 
-__version__ = "0.1.0"
+__version__ = "0.1.2"
