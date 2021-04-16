@@ -14,7 +14,7 @@ def main():
     if not root_dir.is_dir():
         print("The specified root directory doesn't exist... closing")
         sys.exit
-    tree = DirectoryTree(root_dir)
+    tree = DirectoryTree(root_dir, dir_only=args.dir_only)
     tree.generate()
 
 def parse_cmd_line_arguments():
@@ -31,5 +31,11 @@ def parse_cmd_line_arguments():
         nargs="?",
         default=".",
         help="Generate a full directory tree starting from the stated root. Default is parent"
+    )
+    parser.add_argument(
+        "-d",
+        "--dir-only",
+        action="store_true",
+        help="Directory only, no files"
     )
     return parser.parse_args()
